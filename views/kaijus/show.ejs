@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= kaiju.name %></title>
+	</head>
+	<body>
+		<header>
+			<h1><%= oneKaiju.name %></h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/kaijus">Kaijus Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<h1>Name: <%= oneKaiju.name %></h1>
+               
+				<h3><%= oneKaiju.alias %></h3>
+				<h3><%= oneKaiju.image %></h3>
+				<h3><%= oneKaiju.size %></h3>
+				<h3><%= oneKaiju.weight %></h3>
+				<h3><%= oneKaiju.firstSeen %></h3>
+				<h3><%= oneKaiju.lastSeen %></h3>
+				<p><%= oneKaiju.notes %></p>
+            </section>
+            <section>
+                <form action="/kaijus/<%= oneKaiju._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Kaiju"/>
+                </form>
+            </section>
+            <section>
+                <a href="/kaijus/<%= oneKaiju._id %>/edit">Edit</a>
+            </section>
+		</main>
+	</body>
+</html>

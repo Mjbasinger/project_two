@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Kaiju</title>
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/kaijus">Kaijus</a>
+    </header>
+    <h1>Add New Kaiju</h1>
+    <form action="/kaijus" method="POST">
+    <input type="text" name="name" placeholder="name"> <br>
+    <input type="text" name="alias" placeholder="alias"> <br>
+    <input type="number" name="size" placeholder="approx. size"> <br>
+    <input type="number" name="weight" placeholder="approx. weight"> <br>
+    <input type="text" name="firstSeen" placeholder="first seen location"> <br>
+    <input type="text" name="lastSeen" placeholder="last known location"> <br>
+    <input type="URL" name="image" placeholder="image url"> <br>
+    <textarea name="notes" placeholder="notable info"></textarea> <br>
+    <input type="submit" value="Add Kaiju">
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<header>
+    <a href="/">Home</a></header>
+    <a href="/kaijus/index/ejs">Kaijus Index</a>
+<body>
+
+    <h1>Edit Kaiju</h1>
+    <form action="/kaijus" method="POST">
+    <input type="text" name="name" vlaue="<%= foundKaiju.name %>"> <br>
+    <input type="text" name="alias" vlaue="<%= foundKaiju.alias %>"> <br>
+    <input type="number" name="size" vlaue="<%= foundKaiju.size %>"> <br>
+    <input type="number" name="weight" vlaue="<%= foundKaiju.weight %>"> <br>
+    <input type="text" name="firstSeen" vlaue="<%= foundKaiju.firstSeen %>"> <br>
+    <input type="text" name="lastSeen" vlaue="<%= foundKaiju.lastSeen %>"> <br>
+    <input type="URL" name="image" vlaue="<%= foundKaiju.url %>"> <br>
+    <textarea name="notes" vlaue="<%= foundKaiju.notes %>"></textarea> <br>
+    <input type="submit" value="Add Kaiju">
+    </form>
+</body>
+</html>
