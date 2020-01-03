@@ -6,6 +6,12 @@ const port = 3000;
 
 require('./db/db.js');
 
+//middleware
+app.use(session({
+    secret: 'SercetsSafe',
+    resave: false,
+    saveUninitialized: false
+}))
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
@@ -13,13 +19,18 @@ app.use(methodOverride('_method'));
 const kaijusController = require('./controllers/kaijus.js');
 app.use('/kaijus', kaijusController);
 
-// const usersController = require('./controllers/users.js');
-// app.use('/users', usersController);
+const usersController = require('./controllers/users.js');
+app.use('/users', usersController);
 
-
+// const sitesController = require('./controllers/sites.js');
+// app.use('/auth', sitesController);
 
 app.get('/', (req, res)=> {
-    res.render('index.ejs')
+    res.render('index.ejs', {
+        message: req.session.message,
+        logged: req.session.logged,
+        username: req.session.username
+    });
 })
 
 

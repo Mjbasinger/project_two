@@ -8,19 +8,19 @@
 </head>
 <header>
     <a href="/">Home</a></header>
-    <a href="/kaijus/index/ejs">Kaijus Index</a>
+    <a href="/kaijus">Kaijus Index</a>
 <body>
 
     <h1>Edit Kaiju</h1>
     <form action="/kaijus" method="POST">
-    <input type="text" name="name" vlaue="<%= foundKaiju.name %>"> <br>
-    <input type="text" name="alias" vlaue="<%= foundKaiju.alias %>"> <br>
-    <input type="number" name="size" vlaue="<%= foundKaiju.size %>"> <br>
-    <input type="number" name="weight" vlaue="<%= foundKaiju.weight %>"> <br>
-    <input type="text" name="firstSeen" vlaue="<%= foundKaiju.firstSeen %>"> <br>
-    <input type="text" name="lastSeen" vlaue="<%= foundKaiju.lastSeen %>"> <br>
-    <input type="URL" name="image" vlaue="<%= foundKaiju.url %>"> <br>
-    <textarea name="notes" vlaue="<%= foundKaiju.notes %>"></textarea> <br>
+    <input type="text" name="name" value="<%= foundKaiju.name %>"> <br>
+    <input type="text" name="alias" value="<%= foundKaiju.alias %>"> <br>
+    <input type="number" name="size" value="<%= foundKaiju.size %>"> <br>
+    <input type="number" name="weight" value="<%= foundKaiju.weight %>"> <br>
+    <input type="text" name="firstSeen" value="<%= foundKaiju.firstSeen %>"> <br>
+    <input type="text" name="lastSeen" value="<%= foundKaiju.lastSeen %>"> <br>
+    <input type="URL" name="image" value="<%= foundKaiju.image %>"> <br>
+    <textarea name="notes" value="<%= foundKaiju.notes %>"></textarea> <br>
     <input type="submit" value="Add Kaiju">
     </form>
 </body>

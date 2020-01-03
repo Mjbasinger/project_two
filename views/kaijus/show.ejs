@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<header>
-			<h1><%= oneKaiju.name %></h1>
+			<h1><%= kaiju.name %></h1>
 			<nav>
 				<ul>
 					<li>
@@ -20,23 +20,23 @@
 		</header>
 		<main>
 			<section>
-				<h1>Name: <%= oneKaiju.name %></h1>
+				<h1>Name: <%= kaiju.name %></h1>
                
-				<h3><%= oneKaiju.alias %></h3>
-				<h3><%= oneKaiju.image %></h3>
-				<h3><%= oneKaiju.size %></h3>
-				<h3><%= oneKaiju.weight %></h3>
-				<h3><%= oneKaiju.firstSeen %></h3>
-				<h3><%= oneKaiju.lastSeen %></h3>
-				<p><%= oneKaiju.notes %></p>
+				<h3><%= kaiju.alias %></h3>
+				<img src=<%= kaiju.image %>>
+				<h3><%= kaiju.size %></h3>
+				<h3><%= kaiju.weight %></h3>
+				<h3><%= kaiju.firstSeen %></h3>
+				<h3><%= kaiju.lastSeen %></h3>
+				<p><%= kaiju.notes %></p>
             </section>
             <section>
-                <form action="/kaijus/<%= oneKaiju._id %>?_method=DELETE" method="POST">
+                <form action="/kaijus/<%= kaiju._id %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete Kaiju"/>
                 </form>
             </section>
             <section>
-                <a href="/kaijus/<%= oneKaiju._id %>/edit">Edit</a>
+                <a href="/kaijus/<%= kaiju._id %>/edit">Edit</a>
             </section>
 		</main>
 	</body>

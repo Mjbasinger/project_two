@@ -43,7 +43,7 @@ router.put('/:id', (req, res)=>{
 
 //delete
 router.delete('/:id', (req, res)=>{
-    Fruit.findByIdAndRemove(req.params.id, (err, deletedKaiju)=>{
+    Kaiju.findByIdAndRemove(req.params.id, (err, deletedKaiju)=>{
         res.redirect('/kaijus');
     })
 })
