@@ -4,10 +4,16 @@ const Kaiju = require('../models/kaiju.js');
 const User = require('../models/user.js');
 
 //new route for kaiju page
-router.get('/new', (req, res)=> {
-   res.render('./kaijus/new.ejs')
+router.get('/new', async (req, res)=> {
+   try {
+    const allUsers = await User.find();
+    res.render('kaijus/new.ejs', {
+    users: allUsers
+   });
+} catch (err) {
+    res.send(err);
+} 
 })
-
 //create route
 router.post('/', (req, res)=>{
     Kaiju.create(req.body, (error, createdKaiju)=>{
@@ -16,13 +22,17 @@ router.post('/', (req, res)=>{
 })
 
 //show route
-router.get('/:id', (req, res)=> {
-    Kaiju.findById(req.params.id, (err, foundKaiju)=>{
+router.get('/:id', async (req, res)=> {
+    try{
+        const foundKaiju = await Kaiju.findById(req.params.id).populate('User');
         res.render('kaijus/show.ejs', {
             kaiju: foundKaiju
-        })
-    })
-})
+        });
+    } catch (err)  {
+        res.send(err);
+    }
+    
+    });
 
 //edit route
 router.get('/:id/edit', (req, res) => {

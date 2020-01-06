@@ -12,6 +12,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
@@ -22,8 +23,8 @@ app.use('/kaijus', kaijusController);
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
 
-// const sitesController = require('./controllers/sites.js');
-// app.use('/auth', sitesController);
+const seedControllers = require('./controllers/seed.js');
+app.use('/seed', seedControllers);
 
 app.get('/', (req, res)=> {
     res.render('index.ejs', {

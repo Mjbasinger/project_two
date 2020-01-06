@@ -3,10 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title><%= kaiju.name %></title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="/css/kaiju.css">
 	</head>
 	<body>
+		<div class="container">
 		<header>
 			<h1><%= kaiju.name %></h1>
+			<h3>Added by: <%= kaiju.user.username %></h3>
 			<nav>
 				<ul>
 					<li>
@@ -22,13 +27,13 @@
 			<section>
 				<h1>Name: <%= kaiju.name %></h1>
                
-				<h3><%= kaiju.alias %></h3>
+				<h3>Alias:<%= kaiju.alias %></h3>
 				<img src=<%= kaiju.image %>>
-				<h3><%= kaiju.size %></h3>
-				<h3><%= kaiju.weight %></h3>
-				<h3><%= kaiju.firstSeen %></h3>
-				<h3><%= kaiju.lastSeen %></h3>
-				<p><%= kaiju.notes %></p>
+				<h3>Approx size in meters: <%= kaiju.size %></h3>
+				<h3>Approx. weight in tons: <%= kaiju.weight %></h3>
+				<h3>First seen: <%= kaiju.firstSeen %></h3>
+				<h3>Last seen:<%= kaiju.lastSeen %></h3>
+				<p>Notable info: <%= kaiju.notes %></p>
             </section>
             <section>
                 <form action="/kaijus/<%= kaiju._id %>?_method=DELETE" method="POST">
@@ -39,5 +44,6 @@
                 <a href="/kaijus/<%= kaiju._id %>/edit">Edit</a>
             </section>
 		</main>
+	</div>
 	</body>
 </html>

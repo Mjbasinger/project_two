@@ -43,10 +43,10 @@ router.post('/login', async (req, res)=> {
         if(foundUser){
             if(bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.message = '';
-                req.session.username = foundUser.session.username;
+                req.session.username = foundUser.username;
                 req.session.logged = true;
 
-                res.redirect('/users/show>');
+                res.redirect('/');
             } else {
                 req.session.message = 'Username or password is incorrect';
                 res.redirect('/');
@@ -63,17 +63,19 @@ router.post('/login', async (req, res)=> {
 
     router.post('/registration', async (req, res)=>{
         
-        const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
         
-        const userDBEntry = {
+        try {
+            const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+            const userDBEntry = {
             username: req.body.username,
             password: passwordHash,
             email: req.body.email
         }
-        try {
             const createdUser = await User.create(userDBEntry);
-            req.session.username = foundUser.username;
+            console.log(createdUser)
+            req.session.username = createdUser.username;
             req.session.logged = true;
+            console.log(req.session);
             res.redirect('/');
         } catch(err) {
             res.send(err);

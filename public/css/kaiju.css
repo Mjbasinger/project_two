@@ -1,0 +1,33 @@
+
+
+.container {
+    display: inline-block;
+    text-align: center;
+}
+
+header {
+    margin: 5px;
+    display: block;
+    background-color: lightslategrey;
+    background-image: linear-gradient(grey, lightgrey, ghostwhite);
+}
+
+body {
+   margin: 20px;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 2px grey;
+    float: left;
+    
+}
+
+li {
+    list-style: none;
+    display: inline;
+    margin: 30px;
+
+}
