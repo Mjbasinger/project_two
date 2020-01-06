@@ -18,7 +18,8 @@ router.get('/',  async (req, res)=>{
             size: 389,
             weight: 30000,
             firstSeen: 'Tokyo, Japan',
-            lastSeen: 'Boston, Massachusettes, USA',
+            lastSeen: " ",
+            user: "5e0fc97854494036cde805aa",
             notes: 'Godzilla, the most capable of the known kaiju has a veritable pantheon of unique abilities. Godzilla can breath underwater, has extremely thick scales that serve as great protection against other monsters and human balistics. Godzilla\'s signature weapon is it\'s atomic breath.'
         },
         {

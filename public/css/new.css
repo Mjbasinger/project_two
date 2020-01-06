@@ -1,0 +1,51 @@
+body {
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    display: flex;
+
+}
+
+header {
+    background-image: linear-gradient(grey, lightgrey, ghostwhite, white);
+    height: 30%;
+}
+
+nav {
+    display: inline-block;
+    margin: 20px;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+li {
+    float: right;
+    list-style: none;
+    margin: 10px;
+}
+
+form {
+    text-align: center;
+    margin: 1%;
+}
+
+input{
+    margin: 5px;
+    border: 1px solid black;
+}
+
+textarea{
+    margin: 5px;
+    border: 1px solid black;
+}

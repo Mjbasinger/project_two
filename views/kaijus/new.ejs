@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/new.css">
     <title>Add Kaiju</title>
 </head>
 <body>
     <header>
-        <a href="/">Home</a>
-        <a href="/kaijus">Kaijus</a>
+        <nav>
+            <h1>Add New Kaiju</h1>
+        <ul>
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-primary" href="/kaijus">Kaijus</a>
+    </ul>
+</nav>
     </header>
-    <h1>Add New Kaiju</h1>
-    <form action="/kaijus" method="POST">
-    <input type="text" name="name" placeholder="name"> <br>
-    <input type="text" name="alias" placeholder="alias"> <br>
-    <input type="number" name="size" placeholder="approx. size"> <br>
-    <input type="number" name="weight" placeholder="approx. weight"> <br>
-    <input type="text" name="firstSeen" placeholder="first seen location"> <br>
-    <input type="text" name="lastSeen" placeholder="last known location"> <br>
-    <input type="URL" name="image" placeholder="image url"> <br>
-    <textarea name="notes" placeholder="notable info"></textarea> <br>
-    <input type="submit" value="Add Kaiju">
-    </form>
+        <div class="form">
+            <form action="/kaijus" method="POST">
+            <input type="text" name="name" placeholder="name"> <br>
+            <input type="text" name="alias" placeholder="alias"> <br>
+            <input type="number" name="size" placeholder="approx. size"> <br>
+            <input type="number" name="weight" placeholder="approx. weight"> <br>
+            <input type="text" name="firstSeen" placeholder="first seen location"> <br>
+            <input type="text" name="lastSeen" placeholder="last known location"> <br>
+            <input type="URL" name="image" placeholder="image url"> <br>
+            <textarea name="notes" placeholder="notable info"></textarea> <br>
+            <input type="submit" value="Add Kaiju">
+        </form>
+</div>
 </body>
 </html>

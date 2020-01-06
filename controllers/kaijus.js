@@ -15,57 +15,80 @@ router.get('/new', async (req, res)=> {
 } 
 })
 //create route
-router.post('/', (req, res)=>{
-    Kaiju.create(req.body, (error, createdKaiju)=>{
-    res.redirect('/kaijus')
-})
-})
-
-//show route
-router.get('/:id', async (req, res)=> {
-    try{
-        const foundKaiju = await Kaiju.findById(req.params.id).populate('User');
-        res.render('kaijus/show.ejs', {
-            kaiju: foundKaiju
-        });
-    } catch (err)  {
+router.post('/', async (req, res)=>{
+    try {
+    const foundUser = await User.findOne({username: req.session.username})
+    req.body.user = foundUser._id;
+    await Kaiju.create(req.body);
+    res.redirect('/kaijus');
+    } catch (err) {
         res.send(err);
     }
-    
-    });
-
-//edit route
-router.get('/:id/edit', (req, res) => {
-    Kaiju.findById(req.params.id, (err, kaijuToEdit) => {
-        res.render('kaijus/edit.ejs', {
-            foundKaiju: kaijuToEdit,
-            foundKaijuId: kaijuToEdit._id
-        })
-    })
-})
-
-//put
-router.put('/:id', (req, res)=>{
-    Kaiju.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedKaiju)=>{
-        res.redirect(`/kaijus/${updatedKaiju._id}`);
-    })
-})
-
-//delete
-router.delete('/:id', (req, res)=>{
-    Kaiju.findByIdAndRemove(req.params.id, (err, deletedKaiju)=>{
-        res.redirect('/kaijus');
-    })
 })
 
 //index route
-router.get('/', (req, res)=>{
-    Kaiju.find({}, (err, allKaijus)=>{
-    res.render('kaijus/index.ejs',{
-        kaijus: allKaijus
+router.get('/', async (req, res)=>{
+    try{
+        const foundKaijus = await Kaiju.find();
+        console.log(foundKaijus);
+        res.render('kaijus/index.ejs',{
+        kaijus: foundKaijus
+       
+        
         })
-    })
+    } catch (err){
+        res.send(err);
+    }
 })
+//show
+router.get('/:id', async (req, res)=> {
+    try{
+        const foundKaiju = await Kaiju.findById(req.params.id).populate('user');
+        res.render('kaijus/show.ejs', {
+            kaiju: foundKaiju,
+        });
+    } catch (err)  {
+    res.send(err);
+    } 
+    
+});
+
+//edit route
+router.get('/:id/edit', async (req, res) => {
+    try {
+    const foundKaiju = await Kaiju.findById(req.params.id);
+    const allUsers = await User.find();
+        res.render('kaijus/edit.ejs', {
+            kaijus: foundKaiju,
+            users: allUsers
+        })
+    }catch (err) {
+        res.send(err);
+    }
+});
+
+//update
+router.put('/:id', async (req, res)=>{
+    try {
+        await Kaiju.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect(`/kaijus/${req.params.id}`);
+    }catch (err){
+        res.send(err);
+    }   
+})
+
+//delete
+router.delete('/:id', async (req, res)=>{
+    try {
+   await Kaiju.findByIdAndRemove(req.params.id);
+    
+   res.redirect('/kaijus');
+
+    }catch (err){
+        res.send(err);
+    }
+})
+
 
 
 module.exports = router;
