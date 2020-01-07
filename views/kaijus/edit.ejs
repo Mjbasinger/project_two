@@ -13,15 +13,23 @@
 
     <h1>Edit Kaiju</h1>
     <form action="/kaijus/<%= kaiju._id %>?_method=PUT" method="POST">
-    <input type="text" name="name" value="<%= foundKaiju.name %>"> <br>
-    <input type="text" name="alias" value="<%= foundKaiju.alias %>"> <br>
-    <input type="number" name="size" value="<%= foundKaiju.size %>"> <br>
-    <input type="number" name="weight" value="<%= foundKaiju.weight %>"> <br>
-    <input type="text" name="firstSeen" value="<%= foundKaiju.firstSeen %>"> <br>
-    <input type="text" name="lastSeen" value="<%= foundKaiju.lastSeen %>"> <br>
-    <input type="URL" name="image" value="<%= foundKaiju.image %>"> <br>
-    <textarea name="notes" value="<%= foundKaiju.notes %>"></textarea> <br>
+    <input type="text" name="name" value="<%= kaiju.name %>"> <br>
+    <input type="text" name="alias" value="<%= kaiju.alias %>"> <br>
+    <input type="number" name="size" value="<%= kaiju.size %>"> <br>
+    <input type="number" name="weight" value="<%= kaiju.weight %>"> <br>
+    <input type="text" name="firstSeen" value="<%= kaiju.firstSeen %>"> <br>
+    <input type="text" name="lastSeen" value="<%= kaiju.lastSeen %>"> <br>
+    <input type="URL" name="image" value="<%= kaiju.image %>"> <br>
+    <textarea name="notes" value="<%= kaiju.notes %>"></textarea> <br>
     <input type="submit" value="Update Kaiju">
     </form>
 </body>
+
+<footer>
+        <h2>follow us:</h2>
+        <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-256.png" alt="facebook">
+        <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-256.png" alt="Twitter">
+        <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-256.png" alt="Instagram">
+    
+    </footer>
 </html>
