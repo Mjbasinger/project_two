@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="/css/new.css">
 </head>
 <header>
-    <a href="/">Home</a></header>
-    <a href="/kaijus">Kaijus Index</a>
-<body>
-
-    <h1>Edit Kaiju</h1>
-    <form action="/kaijus/<%= kaiju._id %>?_method=PUT" method="POST">
-    <input type="text" name="name" value="<%= kaiju.name %>"> <br>
-    <input type="text" name="alias" value="<%= kaiju.alias %>"> <br>
-    <input type="number" name="size" value="<%= kaiju.size %>"> <br>
-    <input type="number" name="weight" value="<%= kaiju.weight %>"> <br>
-    <input type="text" name="firstSeen" value="<%= kaiju.firstSeen %>"> <br>
-    <input type="text" name="lastSeen" value="<%= kaiju.lastSeen %>"> <br>
-    <input type="URL" name="image" value="<%= kaiju.image %>"> <br>
-    <textarea name="notes" value="<%= kaiju.notes %>"></textarea> <br>
-    <input type="submit" value="Update Kaiju">
+    <nav>
+        <ul>
+                <h1>Edit Kaiju</h1>
+                <a class="btn btn-primary" href="/">Home</a>
+                <a class="btn btn-primary" href="/kaijus">Kaijus</a>
+            </ul>
+        </nav>
+        </header>
+        <body>
+    <hr>
+    <div class="form">
+        <form action="/kaijus/<%= kaiju._id %>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%= kaiju.name %>"> <br>
+        <input type="text" name="alias" value="<%= kaiju.alias %>"> <br>
+        <input type="number" name="size" value="<%= kaiju.size %>"> <br>
+        <input type="number" name="weight" value="<%= kaiju.weight %>"> <br>
+        <input type="text" name="firstSeen" value="<%= kaiju.firstSeen %>"> <br>
+        <input type="text" name="lastSeen" value="<%= kaiju.lastSeen %>"> <br>
+        <input type="URL" name="image" value="<%= kaiju.image %>"> <br>
+        <textarea name="notes" value="<%= kaiju.notes %>"></textarea> <br>
+        <input type="submit" value="Update Kaiju">
     </form>
+</div>
 </body>
 
 <footer>

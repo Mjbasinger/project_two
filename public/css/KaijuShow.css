@@ -7,6 +7,7 @@ header {
     margin-top: 0%;
     height: 10%;
     width: 100%;
+    font-family: 'Mukta';
 }
 
 body {
@@ -16,8 +17,13 @@ body {
     align-items: center;
     background-image: linear-gradient(grey, lightgrey, ghostwhite, white);
     font-family: 'Mukta', sans-serif;
-
+    text-align: center;
     
+}
+
+.nameUser {
+    text-align: center;
+    margin-left: 5%;
 }
 
 main {
@@ -28,12 +34,18 @@ main {
 }
 
 img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 600px;
+    max-height: 600px;
     border: 1px solid black;
+    margin-left: 5%;
     box-shadow: 5px 5px 2px grey;
     float: left;
     
+}
+
+nav{
+    display: inline-block;
+    justify-content: end;
 }
 
 li {
@@ -62,8 +74,4 @@ footer {
     max-height: 50px;
     border: none;
     box-shadow: none;
-}
-
-input{
-    text-align: center;
 }

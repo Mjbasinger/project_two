@@ -5,13 +5,16 @@
 		<title><%= kaiju.name %></title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="/css/kaiju.css">
+		<link rel="stylesheet" href="/css/kaijuShow.css">
+		<link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		
 		<header>
-			<h1><%= kaiju.name %></h1>
-			<h3>Added by: <%= kaiju.user.username %></h3>
+			<div class="nameUser">
+				<h1><%= kaiju.name %></h1>
+				<h3>Added by: <%= kaiju.user.username %></h3>
+			</div>
 			<nav>
 				<ul>
 					<li>
@@ -52,5 +55,5 @@
 			<img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-256.png" alt="Twitter">
 			<img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-256.png" alt="Instagram">
 		
-		</footer>
+	</footer>
 </html>

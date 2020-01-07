@@ -42,7 +42,7 @@ router.get('/',  async (req, res)=>{
             size: 100,
             weight: 15000,
             firstSeen: 'Skull Island', 
-            lastSeen: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d682903.2002588048!2d-149.57186286947348!3d-17.594463666651908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x769a35e2b7cbded9%3A0x7f50abb282ad59ae!2sMount%20&#39;Orohena!5e0!3m2!1sen!2sus!4v1578372212738!5m2!1sen!2sus",
+            lastSeen: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d140341.17965040146!2d-158.0934735387519!3d21.447364387539796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c005d2b2a7b9805%3A0x56d2383e4b9d9afe!2sEwa%20Forest%20Reserve%2C%20Wahiawa%2C%20HI%2096786!5e0!3m2!1sen!2sus!4v1578424693100!5m2!1sen!2sus",
             user: "5e14d0b09ba7fbd5c8544409",
             notes: 'While by no means the largest of the known kaiju, what Kong lack in size he makes up for in agility and strength.'
 
@@ -54,7 +54,7 @@ router.get('/',  async (req, res)=>{
             size: 300,
             weight: 5800,
             firstSeen: 'New York, New York, USA', 
-            lastSeen: "",
+            lastSeen: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.15276855498!2d-74.03927083782217!3d40.7591703599086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fcecc08c!2sManhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1578424405094!5m2!1sen!2sus"    ,
             user: '5e14d0b09ba7fbd5c8544409',
             notes: 'Not much is known about the kaiju known as Clover that attacked New York City. This creature is thought to be amphibious, is known to have extremely resiliant skin, and incredible strength.'
         }
