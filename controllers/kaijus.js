@@ -59,7 +59,7 @@ router.get('/:id/edit', async (req, res) => {
     const foundKaiju = await Kaiju.findById(req.params.id);
     const allUsers = await User.find();
         res.render('kaijus/edit.ejs', {
-            kaijus: foundKaiju,
+            kaiju: foundKaiju,
             users: allUsers
         })
     }catch (err) {

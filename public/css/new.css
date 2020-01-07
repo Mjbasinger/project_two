@@ -13,7 +13,7 @@ main {
 
 header {
     background-image: linear-gradient(grey, lightgrey, ghostwhite, white);
-    height: 30%;
+    height: 20%;
 }
 
 nav {
@@ -38,6 +38,7 @@ li {
 form {
     text-align: center;
     margin: 1%;
+    margin-top: 10%;
 }
 
 input{

@@ -8,23 +8,23 @@
 		<link rel="stylesheet" href="/css/kaiju.css">
 	</head>
 	<body>
-		<div class="container">
+		
 		<header>
 			<h1><%= kaiju.name %></h1>
 			<h3>Added by: <%= kaiju.user.username %></h3>
 			<nav>
 				<ul>
 					<li>
-						<a href="/">Home</a>
+						<button class="btn btn-primary" onclick ="window.location.href='/'">Home</a></button>
 					</li>
 					<li>
-						<a href="/kaijus">Kaijus Index</a>
+							<button class="btn btn-primary" onclick ="window.location.href='/kaijus'">Kaijus Index</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 		<main>
-			<section>
+			<main>
 				<h1>Name: <%= kaiju.name %></h1>
                
 				<h3>Alias:<%= kaiju.alias %></h3>
@@ -32,9 +32,9 @@
 				<h3>Approx size in meters: <%= kaiju.size %></h3>
 				<h3>Approx. weight in tons: <%= kaiju.weight %></h3>
 				<h3>First seen: <%= kaiju.firstSeen %></h3>
-				<h3>Last seen:</h3> <iframe src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188820.04330969308!2d-71.11036754942099!3d42.3145185906349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C%20MA!5e0!3m2!1sen!2sus!4v1578335004932!5m2!1sen!2sus"></iframe>
+				<h3>Last seen:</h3> <iframe src= <%= kaiju.lastSeen %></iframe>>
 				<p>Notable info: <%= kaiju.notes %></p>
-            </section>
+            </main>
             <section>
                 <form action="/kaijus/<%= kaiju._id %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete Kaiju"/>
@@ -44,6 +44,6 @@
                 <a href="/kaijus/<%= kaiju._id %>/edit">Edit</a>
             </section>
 		</main>
-	</div>
+	
 	</body>
 </html>

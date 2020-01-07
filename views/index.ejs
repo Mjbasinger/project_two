@@ -7,6 +7,8 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
+
     <title>Kaiju Tracker</title>
 </head>
 <body>
@@ -17,8 +19,12 @@
             <h1>kaiju tracker</h1>
                 <button class="btn btn-primary" onclick="window.location.href='/kaijus'"><li>All Kaiju</li></button>
                 <button class="btn btn-primary" onclick="window.location.href='/kaijus/new'"><li>Add New</li></button>
+                
         <% if(logged) { %>
-                <button class="btn btn-primary"><a href="/users/logout">Logout</a></button>
+                
+                 <button class="btn btn-primary" onclick=
+                "window.location.href='/users/logout'">Logout</button>
+
                 <li><%= username %></li>
                 <% } %>
 

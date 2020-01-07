@@ -1,9 +1,5 @@
 
 
-.container {
-    min-width: 30%;
-}
-
 
 body {
     flex-direction: column;
@@ -53,8 +49,8 @@ header {
 
 img {
     
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     align-content: center;
     border: 1px solid black;
     

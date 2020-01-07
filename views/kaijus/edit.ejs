@@ -12,7 +12,7 @@
 <body>
 
     <h1>Edit Kaiju</h1>
-    <form action="/kaijus" method="POST">
+    <form action="/kaijus/<%= kaiju._id %>?_method=PUT" method="POST">
     <input type="text" name="name" value="<%= foundKaiju.name %>"> <br>
     <input type="text" name="alias" value="<%= foundKaiju.alias %>"> <br>
     <input type="number" name="size" value="<%= foundKaiju.size %>"> <br>
@@ -21,7 +21,7 @@
     <input type="text" name="lastSeen" value="<%= foundKaiju.lastSeen %>"> <br>
     <input type="URL" name="image" value="<%= foundKaiju.image %>"> <br>
     <textarea name="notes" value="<%= foundKaiju.notes %>"></textarea> <br>
-    <input type="submit" value="Add Kaiju">
+    <input type="submit" value="Update Kaiju">
     </form>
 </body>
 </html>
