@@ -2,51 +2,55 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title><%= kaiju.name %></title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="/css/kaijuShow.css">
 		<link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/style.css">
 	</head>
 	<body>
-		
-		<header>
-			<div class="nameUser">
+		<div id="wrapper">
+			<div class="pageName">
 				<h1><%= kaiju.name %></h1>
 				<h3>Added by: <%= kaiju.user.username %></h3>
 			</div>
-			<nav>
-				<ul>
-					<li>
-						<button class="btn btn-primary" onclick ="window.location.href='/'">Home</a></button>
-					</li>
-					<li>
-							<button class="btn btn-primary" onclick ="window.location.href='/kaijus'">Kaijus Index</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<main>
+			<div class='dropdown'>
+				<button class="dropButton">
+					<div class="icon"></div>
+					<div class="icon"></div>
+					<div class="icon"></div>
+				  </button>
+				  <div class="dropContent">
+					<ul>
+							<a href="/">Home</a>
+							<a onclick="window.location.href='/kaijus'">All Kaiju</a>
+							<a href="">My Profile</a>
+					</ul>
+				</div>
+				</div>
+		
+				<div class="info">
 				<h1>Name: <%= kaiju.name %></h1>
                
-				<h3>Alias:<%= kaiju.alias %></h3>
+				<h3>Alias: <%= kaiju.alias %></h3>
 				<img src=<%= kaiju.image %>>
 				<h3>Approx size in meters: <%= kaiju.size %></h3>
 				<h3>Approx. weight in tons: <%= kaiju.weight %></h3>
 				<h3>First seen: <%= kaiju.firstSeen %></h3>
+				<h3>Notable info:</h3> 
+				<p><%= kaiju.notes %></p>
 				<h3>Last seen:</h3> <iframe src= <%= kaiju.lastSeen %></iframe>>
-				<p>Notable info: <%= kaiju.notes %></p>
-            </main>
-            <section>
+				
+            
                 <form action="/kaijus/<%= kaiju._id %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete Kaiju"/>
                 </form>
-            </section>
-            <section>
+            
                 <a href="/kaijus/<%= kaiju._id %>/edit">Edit</a>
-            </section>
-		</main>
+			</div>
+		
 	
 	</body>
 	<footer>
@@ -56,4 +60,5 @@
 			<img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-256.png" alt="Instagram">
 		
 	</footer>
+</div>
 </html>

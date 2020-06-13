@@ -7,9 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="/css/new.css">
+		<link rel="stylesheet" href="/css/style.css">
 </head>
-<header>
+<div id="wrapper">
     <nav>
         <ul>
                 <h1>Edit Kaiju</h1>
@@ -17,29 +17,36 @@
                 <a class="btn btn-primary" href="/kaijus">Kaijus</a>
             </ul>
         </nav>
-        </header>
+        
         <body>
     <hr>
     <div class="form">
         <form action="/kaijus/<%= kaiju._id %>?_method=PUT" method="POST">
-        <input type="text" name="name" value="<%= kaiju.name %>"> <br>
-        <input type="text" name="alias" value="<%= kaiju.alias %>"> <br>
-        <input type="number" name="size" value="<%= kaiju.size %>"> <br>
-        <input type="number" name="weight" value="<%= kaiju.weight %>"> <br>
-        <input type="text" name="firstSeen" value="<%= kaiju.firstSeen %>"> <br>
-        <input type="text" name="lastSeen" value="<%= kaiju.lastSeen %>"> <br>
-        <input type="URL" name="image" value="<%= kaiju.image %>"> <br>
-        <textarea name="notes" value="<%= kaiju.notes %>"></textarea> <br>
-        <input type="submit" value="Update Kaiju">
+        <input class='addForm' type="text" name="name" value="<%= kaiju.name %>"> <br>
+        <input class='addForm' type="text" name="alias" value="<%= kaiju.alias %>"> <br>
+        <input class='addForm' type="number" name="size" value="<%= kaiju.size %>"> <br>
+        <input class='addForm' type="number" name="weight" value="<%= kaiju.weight %>"> <br>
+        <input class='addForm' type="text" name="firstSeen" value="<%= kaiju.firstSeen %>"> <br>
+        <input class='addForm' type="text" name="lastSeen" value="<%= kaiju.lastSeen %>"> <br>
+        <input class='addForm' type="URL" name="image" value="<%= kaiju.image %>"> <br>
+        <textarea class='addForm' name="notes" value="<%= kaiju.notes %>"></textarea> <br>
+        <input class='addForm' type="submit" value="Update Kaiju">
     </form>
 </div>
 </body>
 
 <footer>
-        <h2>follow us:</h2>
+        <div>
         <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-256.png" alt="facebook">
+        
+    </div>
+    <div>
         <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-256.png" alt="Twitter">
+        
+    </div>
+    <div>
         <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-256.png" alt="Instagram">
-    
+        </div>
     </footer>
+</div>
 </html>

@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
-<body>
 
-    <header>
-        <h1>All Known Kaiju</h1>
-        <nav>
+<body>
+    <div id='wrapper'>
+        <div class="pageName">
+            <h1>All Known Kaiju</h1>
+        </div>
+        <div class='dropdown'>
+        <button class="dropButton">
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+          </button>
+          <div class="dropContent">
             <ul>
-                <li>
-                    <a class="btn btn-primary" href="/">Home</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary" href="/kaijus/new">Add New Kaiju</a>
-                </li>
-                <li>
-                    <a class="btn btn-primary" href="">My Profile</a>
-                </li>
+                    <a href="/">Home</a>
+                    <a href="/kaijus/new">Add New Kaiju</a>
+                    <a href="">My Profile</a>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <ul>
-            <% for(let i = 0; i < kaijus.length; i++) { %>
-            <li>
-                <button class='btn btn-primary' onclick="window.location.href='/kaijus/<%= kaijus[i]._id %>'"><%= kaijus[i].name %></button>
+        </div>
+        </div>
+
+        <main>
+            <ul>
+                <% for(let i = 0; i < kaijus.length; i++) { %>
+                <div class="allKaiju">
                 
-                <img src="<%= kaijus[i].image %>">
-                <form action="/kaijus/<%= kaijus[i]._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE">
-                </form>
-                
-            <button class="btn btn-primary" onclick="window.location.href='/kaijus/<%= kaijus[i]._id %>/edit'">Edit</button>
-            </li>
-            <% } %>
-        </ul>
-    </main>
+                    <button class='btn btn-primary'
+                        onclick="window.location.href='/kaijus/<%= kaijus[i]._id %>'"><%= kaijus[i].name %></button>
+                    <div>
+                    <img class='allImage' src="<%= kaijus[i].image %>">
+                    </div>
+                    <div>
+                    <form action="/kaijus/<%= kaijus[i]._id %>?_method=DELETE" method="POST">
+                        <button class='btn btn-primary' type="submit" value="DELETE"> Delete </button>
+                    </form>
+
+                    <button class="btn btn-primary"
+                        onclick="window.location.href='/kaijus/<%= kaijus[i]._id %>/edit'">Edit</button>
+                    <hr>
+                </div>
+                </div>
+                <% } %>
+            </ul>
+        </main>
     
 </body>
 <footer>
-        <h2>follow us:</h2>
-        <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-256.png" alt="facebook">
-        <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-256.png" alt="Twitter">
-        <img class="social-img" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-256.png" alt="Instagram">
-    
-    </footer>
+    <!-- <h2>follow us:</h2> -->
+    <div>
+        <img class="social-img"
+            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-256.png"
+            alt="facebook">
+    </div>
+    <div>
+        <img class="social-img"
+            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-256.png"
+            alt="Twitter">
+    </div>
+    <div>
+        <img class="social-img"
+            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-256.png"
+            alt="Instagram">
+    </div>
+</footer>
+</div>
 </html>
